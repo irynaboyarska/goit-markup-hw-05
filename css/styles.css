@@ -528,15 +528,16 @@ img{
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #FFF;
+    margin-bottom: 16px;
 }
 
 .subscribe-container{
     display: flex;
     gap: 24px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 16px;
+}
+
+.subscribe-field{
+
 }
 
 .email-field{
@@ -545,9 +546,17 @@ img{
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     width: 264px;
     height: 40px;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: #ffffff;
     background-color: transparent;
-    padding: 8px 16px;
+    padding-left: 16px;
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.email-field::placeholder{
+    color: #ffffff;
 }
 
 .email-field:focus{
@@ -556,6 +565,7 @@ img{
 }
 
 .subscribe-button{
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -584,6 +594,7 @@ img{
 
 .footer-subscribe-icon{
     fill: #ffffff;
+    margin-left: 16px;
 }
 /* #endregion footer */
 
@@ -599,23 +610,31 @@ img{
     background-color: rgba(46, 47, 66, 0.4);
     width: 100%;
     height: 100%;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-open{
     opacity: 0;
     user-select: none;
     pointer-events: none;
+    visibility: hidden;
 }
 
 .popup-container{
     position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 408px;
     min-height: 584px;
     border-radius: 4px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #FCFCFC;
-    padding: 72px 24px 24px 24px
+    padding: 72px 24px 24px 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .popup-text {
@@ -631,27 +650,35 @@ img{
 
 .close-popup-btn{
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 24px;
     right: 24px;
     background-color: #E7E9FC;
-    border-radius: 100%;
+    border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
     padding: 0;
     padding: 8px;
-    fill: #2E2F42;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-                background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-popup-btn:hover,
 .close-popup-btn:focus{
-    fill: #ffffff;
     background-color: #404BBF;
+    border: none;
 }
 
 .close-icon{
     display: block;
+    fill: #2E2F42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-icon:hover,
+.close-icon:focus{
+    fill: #ffffff;
 }
 
 .form-field-wrapper{
@@ -680,11 +707,12 @@ img{
     background-color: transparent;
     color: #111;
     padding-left: 38px;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .text-field:focus{
-    border: 1px solid #4D5AE5;
+    border-color: #4D5AE5;
     outline: none;
 }
 
@@ -712,16 +740,14 @@ img{
     height: 120px;
     padding: 8px 16px;
     resize: none;
-    outline: none;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.comment-textarea::placeholder{
+    outline: transparent;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .comment-textarea:focus{
@@ -747,16 +773,15 @@ img{
     border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     fill: transparent;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .checkbox-icon{
 
 }
 
 .policy-checkbox:checked+.label-field>.custom-checkbox{
-    background-color: #4D5AE5;
+    background-color: #404bbf;
+    border: none;
     fill: #F4F4FD;
 }
 
@@ -773,15 +798,15 @@ img{
 }
 
 .form-button{
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
     color: #ffffff;
     background-color: #4D5AE5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    margin: 0 auto;
     cursor: pointer;
     border-radius: 4px;
     border: none;
@@ -798,4 +823,5 @@ img{
 .form-button:focus{
     background-color: #404BBF;
 }
+
 /* #endregion popup */
