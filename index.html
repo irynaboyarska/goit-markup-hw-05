@@ -477,14 +477,15 @@
         <div class="footer-form-container">
           <p class="subscribe-text">Subscribe</p>
           <form class="subscribe-container">
-            <label for="subscribe" class="subscribe-field"></label>
-            <input
-              type="email"
-              name="subscribe"
-              id="subscribe"
-              placeholder="E-mail"
-              class="email-field"
-            />
+            <label class="subscribe-field">
+              <input
+                type="email"
+                name="subscribe"
+                id="subscribe"
+                placeholder="E-mail"
+                class="email-field"
+              />
+            </label>
             <button type="submit" class="subscribe-button">
               Subscribe
               <svg class="footer-subscribe-icon" width="24" height="24">
@@ -498,7 +499,7 @@
     <!-- #endregion footer -->
 
     <!-- #region popup -->
-    <div class="backdrop is-open">
+    <div class="backdrop">
       <div class="popup-container">
         <button class="close-popup-btn" type="button">
           <svg class="close-icon" width="8" height="8">
