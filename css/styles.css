@@ -614,10 +614,10 @@ img{
 }
 
 .is-open{
-    opacity: 0;
-    user-select: none;
-    pointer-events: none;
-    visibility: hidden;
+    opacity: 1;
+    user-select: auto;
+    pointer-events: auto;
+    visibility: visible;
 }
 
 .popup-container{
@@ -790,12 +790,6 @@ img{
     line-height: 1.3;
     text-decoration: underline;
     color: #4D5AE5;
-}
-
-.form-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .form-button {
